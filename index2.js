@@ -129,9 +129,9 @@ app.post("/Mascotas", (req,res)=>{
         name:req.body.name,
         last:req.body.age,
         type:req.body.type,
-        vet:req.body.Veterinarios,
+        vet:'',
         id:req.body.id,
-        Acudiente:req.body.Usuario
+        Acudiente:''
     }
 
     Usuario.push(newMascotas)
