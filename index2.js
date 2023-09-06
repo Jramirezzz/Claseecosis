@@ -55,6 +55,23 @@ Usuario = {
 }
 
 app.patch("/Mascotas/:id", (req,res)=>{
+    let index = Mascotas.findIndex(user => user.id == req.params.id)
+    Mascotas[index].name = req.body.name || Mascotas[index].name
+    Mascotas[index].last = req.body.lastname || Mascotas[index].lastname
+    Mascotas[index].id = req.body.id || Mascotas[index].id
+
+    res.send("usuario actulizado" )
+})
+
+app.patch("/Usuarios/:id", (req,res)=>{
+    let index = Usuarios.findIndex(user => user.id == req.params.id)
+    Usuarios[index].name = req.body.name || Usuarios[index].name
+    Usuarios[index].last = req.body.lastname || Usuarios[index].lastname
+    Usuarios[index].id = req.body.id || Usuarios[index].id
+
+    res.send("usuario actulizado" )
+})
+app.patch("/Veterianrios/:id", (req,res)=>{
     let index = Veterianrios.findIndex(user => user.id == req.params.id)
     Veterianrios[index].name = req.body.name || Veterianrios[index].name
     Veterianrios[index].last = req.body.lastname || Veterianrios[index].lastname
